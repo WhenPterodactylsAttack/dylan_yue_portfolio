@@ -1,9 +1,11 @@
 /* Basic layout and header styles */
 :root{
-	--header-height: 60px;
-	--header-bg: #0b3954;
-	--link-color: #ffffff;
-	--link-hover: #ffd166;
+	--header-height: 56px;
+	--header-bg: rgba(255,255,255,0.06);
+	--glass-border: rgba(255,255,255,0.08);
+	--link-color: #e6eef8;
+	--link-accent: #931df3;
+	--muted: rgba(0, 0, 0, 0.8);
 }
 
 html{
@@ -18,48 +20,171 @@ body{
 
 header#header{
 	position: fixed;
-	top: 0;
-	left: 0;
-	right: 0;
+	top: 12px;
+	left: 50%;
+	transform: translateX(-50%);
 	height: var(--header-height);
-	background: linear-gradient(90deg, var(--header-bg), #06324a);
+	width: min(920px, calc(100% - 36px));
+	background: var(--header-bg);
 	display: flex;
 	align-items: center;
+	justify-content: space-between;
+	padding: 0 18px;
 	z-index: 1000;
-	box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+	border-radius: 12px;
+	border: 1px solid var(--glass-border);
+	backdrop-filter: blur(8px) saturate(120%);
+	-webkit-backdrop-filter: blur(8px) saturate(120%);
+	box-shadow: 0 6px 18px rgba(8,12,20,0.12);
+}
+
+
+.site-brand .logo{
+	width: 34px;
+	height: 34px;
+	border-radius: 8px;
+	background: linear-gradient(135deg,#7bd389 0%, #34a853 100%);
+	box-shadow: inset 0 -2px 6px rgba(0,0,0,0.12);
+}
+
+.site-brand .title{
+	color: var(--muted);
+	font-weight: 600;
+	letter-spacing: 0.2px;
 }
 
 header#header nav ul{
 	list-style: none;
 	margin: 0;
-	padding: 0 20px;
+	padding: 0;
 	display: flex;
-	gap: 20px;
+	gap: 22px;
+	align-items: center;
+}
+
+/* nav toggle (hamburger) */
+.nav-toggle{
+	display: none;
+	background: transparent;
+	border: none;
+	padding: 6px;
+	margin-left: 8px;
+	cursor: pointer;
+}
+
+.nav-toggle .hamburger{
+	display: block;
+	width: 22px;
+	height: 2px;
+	background: var(--muted);
+	position: relative;
+}
+
+.nav-toggle .hamburger::before,
+.nav-toggle .hamburger::after{
+	content: '';
+	position: absolute;
+	left: 0;
+	right: 0;
+	height: 2px;
+	background: var(--muted);
+}
+
+.nav-toggle .hamburger::before{ top: -7px; }
+.nav-toggle .hamburger::after{ bottom: -7px; }
+
+/* animate hamburger to X when open */
+.nav-toggle.open .hamburger{
+	background: transparent;
+}
+.nav-toggle.open .hamburger::before{
+	transform: rotate(45deg) translate(4px, 4px);
+}
+.nav-toggle.open .hamburger::after{
+	transform: rotate(-45deg) translate(4px, -4px);
+}
+
+.nav-toggle:focus{ outline: 2px solid rgba(123,211,137,0.18); border-radius: 6px; }
+
+/* active link style */
+.primary-nav a.active{
+	color: var(--link-accent);
 }
 
 header#header nav a{
-	color: var(--link-color);
+	color: var(--muted);
 	text-decoration: none;
-	padding: 8px 10px;
-	border-radius: 4px;
+	font-weight: 500;
+	padding: 6px 4px;
+	position: relative;
+	transition: color 160ms ease, transform 160ms ease;
+}
+
+/* subtle underline that animates in */
+header#header nav a::after{
+	content: '';
+	position: absolute;
+	left: 0;
+	right: 0;
+	height: 2px;
+	background: linear-gradient(90deg, transparent, var(--link-accent), transparent);
+	bottom: -6px;
+	transform-origin: left center;
+	transform: scaleX(0);
+	transition: transform 220ms cubic-bezier(.2,.9,.3,1);
 }
 
 header#header nav a:hover,
 header#header nav a:focus{
-	background: rgba(255, 255, 255, 0.08);
-	outline: 2px solid rgba(255,255,255,0.12);
-	color: var(--link-hover);
+	color: var(--link-accent);
+	transform: translateY(-2px);
+}
+
+header#header nav a:hover::after,
+header#header nav a:focus::after{
+	transform: scaleX(1);
 }
 
 /* Sections spacing for clarity */
 div[id$="Section"]{
-	padding: 40px 20px;
+	padding: 56px 20px;
 }
 
 /* Small responsive tweak */
-@media (max-width: 600px){
-	header#header nav ul{
-		gap: 10px;
-		padding: 0 12px;
+@media (max-width: 740px){
+	header#header{
+		left: 12px;
+		right: 12px;
+		transform: none;
+		width: auto;
+		border-radius: 10px;
 	}
+
+	header#header nav ul{
+		gap: 12px;
+	}
+
+	.site-brand .title{display:none;} /* hide text label on small screens */
+
+	/* show hamburger */
+	.nav-toggle{ display: inline-block; }
+
+	/* collapsed nav: hide links until opened */
+	.primary-nav{
+		position: absolute;
+		left: 12px;
+		right: 12px;
+		top: calc(100% + 8px);
+		background: var(--header-bg);
+		border-radius: 10px;
+		border: 1px solid var(--glass-border);
+		padding: 10px 14px;
+		display: none;
+		box-shadow: 0 8px 18px rgba(2,6,10,0.35);
+	}
+
+	.primary-nav.open{ display: block; }
+
+	.primary-nav ul{ flex-direction: column; gap: 8px; }
+	.primary-nav a{ display: block; padding: 8px 4px; }
 }
