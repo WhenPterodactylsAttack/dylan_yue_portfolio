@@ -1,2 +1,3 @@
 # dylan_yue_portfolio
-Welcome! This site is currently under construction!
+Welcome!
+Check out my website: https://whenpterodactylsattack.github.io/dylan_yue_portfolio/
