@@ -7,39 +7,104 @@
     </head>
     <body id="top">
         <header id="header" role="banner">
-            <div class="site-brand" aria-hidden="false">
-                <div class="title">Dylan Yue</div>
-            </div>
             <button id="navToggle" class="nav-toggle" aria-controls="primaryNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="hamburger" aria-hidden="true"></span>
             </button>
             <nav id="primaryNav" class="primary-nav" role="navigation" aria-label="Primary">
-                <ul>
+                <div class="nav-inner">
+                    <ul>
                     <li><a href="#top">Home</a></li>
                     <li><a href="#aboutMeSection">About Me</a></li>
                     <li><a href="#workSection">Work</a></li>
                     <li><a href="#contactSection">Contact</a></li>
-                </ul>
+                    </ul>
+                    
+                </div>
             </nav>
         </header>
-        <div id="aboutMeSection">
+        <!-- HERO / HOME -->
+        <section id="homeSection" class="hero">
+            <div class="hero-inner">
+                <h1>Welcome</h1>
+                <p class="hero-lead">I am a Software Engineer and Maker</p>
+            </div>
+        </section>
+
+        <!-- ABOUT -->
+        <section id="aboutMeSection" class="content-section">
             <h1>About Me</h1>
-            <p>Hello, my name is Dylan and I am University of California graduate. 
-                I majored in computer science and ran the 3D printing club at the time.
-                 I love building projects and am currently saving to get a Bambu Labs P1S</p>
-        </div>
-        <div id="educationSection">
+            <p><!-- Replace with a paragraph about yourself. -->
+            Hello, my name is Dylan and I am a University of California graduate. I majored in computer science and ran the 3D printing club. I love building projects and am currently saving to get a Bambu Labs P1S.
+            </p>
+        </section>
+
+        <!-- SKILLS -->
+        <section id="skillsSection" class="content-section">
+            <h1>Skills</h1>
+            <div class="skills-grid">
+                <!-- Replace items with your skill list -->
+                <div class="skill card">JavaScript</div>
+                <div class="skill card">React</div>
+                <div class="skill card">3D Printing</div>
+                <div class="skill card">Python</div>
+            </div>
+        </section>
+
+        <!-- PROJECTS -->
+        <section id="projectsSection" class="content-section">
+            <h1>Projects</h1>
+            <div class="projects-grid">
+                <!-- Replace with project cards -->
+                <article class="project card">
+                    <h2>Project 1</h2>
+                    <p>Short description. Add links to GitHub or live demo.</p>
+                </article>
+                <article class="project card">
+                    <h2>Project 2</h2>
+                    <p>Short description.</p>
+                </article>
+            </div>
+        </section>
+
+        <!-- EXPERIENCE / WORK -->
+        <section id="workSection" class="content-section">
+            <h1>Work Experience</h1>
+            <div class="experience-timeline">
+                <div class="timeline-item card">
+                    <h2>Architech Solutions</h2>
+                    <p>Role • Dates</p>
+                </div>
+                <div class="timeline-item card">
+                    <h2>iD Tech</h2>
+                    <p>Role • Dates</p>
+                </div>
+                <div class="timeline-item card">
+                    <h2>Costco</h2>
+                    <p>Role • Dates</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- EDUCATION -->
+        <section id="educationSection" class="content-section">
             <h1>Education</h1>
             <h2>University of California Davis</h2>
-        </div>
-        <div id="workSection">
-            <h1>Work Experience</h1>
-            <h2>Architech Solutions</h2>
-            <h2>iD Tech</h2>
-            <h2>Costco</h2>
-        </div>
-        <div id="contactSection">
+        </section>
+
+        <!-- CONTACT -->
+        <section id="contactSection" class="content-section">
             <h1>Contact Me</h1>
-        </div>
+            <p><!-- Add email, social links, or a contact form. -->
+            You can reach me at: <a href="mailto:yuedylan322@gmail.com">yuedylan322@gmail.com</a>
+            </p>
+        </section>
+
+        <!-- FOOTER -->
+        <footer class="site-footer">
+            <div class="footer-inner">
+                <p>© Dylan Yue</p>
+            </div>
+        </footer>
+        <script src="script.js"></script>
     </body>
 </html>
