@@ -23,79 +23,128 @@
             </nav>
         </header>
         <!-- HERO / HOME -->
-        <section id="homeSection" class="hero">
+        <section id="homeSection" class="hero section-card reveal">
             <div class="hero-inner">
-                <h1>Welcome</h1>
-                <p class="hero-lead">I am a Software Engineer and Maker</p>
+                <div class="hero-top">
+                    <img src="assets/img/profile.png" alt="Dylan Yue" class="profile-img" loading="lazy">
+                    <div class="hero-copy">
+                        <h1>Dylan Yue</h1>
+                        <p class="hero-lead">Full Stack Developer • UC Davis B.Eng. Computer Science</p>
+                        <div class="hero-ctas">
+                            <a class="btn-primary" href="assets/resume.pdf" download>Download Resume</a>
+                            <a class="btn-ghost" href="#contactSection">Contact</a>
+                            <a class="btn-outline" href="https://github.com/WhenPterodactylsAttack" target="_blank" rel="noopener">GitHub</a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
 
         <!-- ABOUT -->
-        <section id="aboutMeSection" class="content-section">
-            <h1>About Me</h1>
-            <p><!-- Replace with a paragraph about yourself. -->
-            Hello, my name is Dylan and I am a University of California graduate. I majored in computer science and ran the 3D printing club. I love building projects and am currently saving to get a Bambu Labs P1S.
-            </p>
+        <section id="aboutMeSection" class="content-section section-card reveal">
+            <div class="section-heading">
+                <div class="decor-line"></div>
+                <h2>About Me</h2>
+            </div>
+            <p class="muted-lead">I graduated from the University of California, Davis with a B.Eng. in Computer Science. I enjoy building web applications and 3D-printed projects. I have experience designing responsive UI/UX, performing SEO optimizations, and mentoring students in web development.</p>
+            <p>Currently based in Redmond, WA. Open to Frontend and Full Stack roles.</p>
         </section>
 
         <!-- SKILLS -->
-        <section id="skillsSection" class="content-section">
-            <h1>Skills</h1>
+        <section id="skillsSection" class="content-section section--alt reveal stagger">
+            <div class="section-heading">
+                <div class="decor-line"></div>
+                <h2>Skills</h2>
+            </div>
             <div class="skills-grid">
-                <!-- Replace items with your skill list -->
-                <div class="skill card">JavaScript</div>
-                <div class="skill card">React</div>
-                <div class="skill card">3D Printing</div>
-                <div class="skill card">Python</div>
+                <div class="skill card" data-reveal>JavaScript</div>
+                <div class="skill card" data-reveal>Python</div>
+                <div class="skill card" data-reveal>React</div>
+                <div class="skill card" data-reveal>HTML & CSS</div>
+                <div class="skill card" data-reveal>Node.js</div>
+                <div class="skill card" data-reveal>MongoDB</div>
+                <div class="skill card" data-reveal>Figma</div>
+                <div class="skill card" data-reveal>3D Modeling / Printing</div>
+            </div>
+        </section>
+
+                <!-- EXPERIENCE / WORK -->
+        <section id="workSection" class="content-section section-card reveal">
+            <div class="section-heading">
+                <div class="decor-line"></div>
+                <h2>Work Experience</h2>
+            </div>
+            <div class="experience-timeline">
+                <div class="timeline-item card" data-reveal>
+                    <h3>Full Stack Developer — Architech Solutions</h3>
+                    <p class="muted-lead">Redmond, WA • August 2024 – Present</p>
+                    <ul>
+                        <li>Designed and developed a startup website (mobile & desktop) to establish online presence.</li>
+                        <li>Improved client CTR to 1.94% and conversion rate to 3.2% through UI/UX and SEO improvements.</li>
+                        <li>Implemented responsive designs and elegant transitions that generated 11 inquiries in the first month.</li>
+                    </ul>
+                </div>
+                <div class="timeline-item card" data-reveal>
+                    <h3>Software Development Instructor — iD Tech</h3>
+                    <p class="muted-lead">Remote • June 2024 – March 2025</p>
+                    <ul>
+                        <li>Mentored students in HTML, CSS, JS, Python, and hardware programming; taught over 50 students.</li>
+                        <li>Achieved 95% student satisfaction and 70% retention by customizing lesson plans.</li>
+                    </ul>
+                </div>
+                <div class="timeline-item card" data-reveal>
+                    <h3>President — UC Davis 3D Printing Club</h3>
+                    <p class="muted-lead">Davis, CA • Sep 2022 – Jun 2025</p>
+                    <ul>
+                        <li>Led curriculum development and project work for 23 members; coordinated workshops and industry collaborations.</li>
+                    </ul>
+                </div>
             </div>
         </section>
 
         <!-- PROJECTS -->
-        <section id="projectsSection" class="content-section">
-            <h1>Projects</h1>
-            <div class="projects-grid">
-                <!-- Replace with project cards -->
-                <article class="project card">
-                    <h2>Project 1</h2>
-                    <p>Short description. Add links to GitHub or live demo.</p>
-                </article>
-                <article class="project card">
-                    <h2>Project 2</h2>
-                    <p>Short description.</p>
-                </article>
+        <section id="projectsSection" class="content-section reveal">
+            <div class="section-heading">
+                <div class="decor-line"></div>
+                <h2>Selected Projects</h2>
             </div>
-        </section>
-
-        <!-- EXPERIENCE / WORK -->
-        <section id="workSection" class="content-section">
-            <h1>Work Experience</h1>
-            <div class="experience-timeline">
-                <div class="timeline-item card">
-                    <h2>Architech Solutions</h2>
-                    <p>Role • Dates</p>
-                </div>
-                <div class="timeline-item card">
-                    <h2>iD Tech</h2>
-                    <p>Role • Dates</p>
-                </div>
-                <div class="timeline-item card">
-                    <h2>Costco</h2>
-                    <p>Role • Dates</p>
-                </div>
+            <div class="projects-grid">
+                <article class="project card" data-reveal>
+                    <h3>Audyssey</h3>
+                    <p>Project Manager & Front-end Developer. Built UI integrations and QA for a Python + JS stack. Tools: Docker, MongoDB.</p>
+                </article>
+                <article class="project card" data-reveal>
+                    <h3>Palmer's Penguins Visualization</h3>
+                    <p>Front-end dev using D3.js to generate interactive visualizations. Leveraged AI-assisted graph generation.</p>
+                </article>
+                <article class="project card" data-reveal>
+                    <h3>HackDavis — Facial Recognition</h3>
+                    <p>Implemented a facial recognition pipeline with Flutter and improved accuracy by 20% through dataset engineering.</p>
+                </article>
             </div>
         </section>
 
         <!-- EDUCATION -->
-        <section id="educationSection" class="content-section">
-            <h1>Education</h1>
-            <h2>University of California Davis</h2>
+        <section id="educationSection" class="content-section reveal">
+            <div class="section-heading">
+                <div class="decor-line"></div>
+                <h2>Education</h2>
+            </div>
+            <h3>University of California, Davis</h3>
+            <p>Bachelor of Engineering, Computer Science • Sep 2021 – Jun 2025</p>
         </section>
 
         <!-- CONTACT -->
-        <section id="contactSection" class="content-section">
-            <h1>Contact Me</h1>
-            <p><!-- Add email, social links, or a contact form. -->
-            You can reach me at: <a href="mailto:yuedylan322@gmail.com">yuedylan322@gmail.com</a>
+        <section id="contactSection" class="content-section section-card reveal">
+            <div class="section-heading">
+                <div class="decor-line"></div>
+                <h2>Contact</h2>
+            </div>
+            <p class="muted-lead">Email: <a href="mailto:yuedylan322@gmail.com">yuedylan322@gmail.com</a></p>
+            <p class="muted-lead">Phone: <a href="tel:+14254351056">425-435-1056</a></p>
+            <p>
+                <a class="badge" href="https://www.linkedin.com/in/dylanyue322/" target="_blank" rel="noopener">LinkedIn</a>
+                <a class="badge" href="https://github.com/WhenPterodactylsAttack" target="_blank" rel="noopener">GitHub</a>
             </p>
         </section>
 

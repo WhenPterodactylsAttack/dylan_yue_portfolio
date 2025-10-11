@@ -118,6 +118,16 @@ document.addEventListener('DOMContentLoaded', function () {
 		entries.forEach(entry => {
 			if (entry.isIntersecting) {
 				entry.target.classList.add('visible');
+				// if this element has stagger children, apply incremental delays
+				if (entry.target.classList.contains('stagger')) {
+					const children = Array.from(entry.target.querySelectorAll('[data-reveal]'));
+					children.forEach((c, i) => {
+						const delay = i * 80; // ms
+						c.style.transitionDelay = `${delay}ms`;
+					});
+					// ensure children get visible class via parent selector
+					entry.target.classList.add('visible');
+				}
 			} else {
 				// keep visible once revealed for a consistent experience
 				// entry.target.classList.remove('visible');

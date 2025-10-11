@@ -15,6 +15,14 @@
 	--nav-link-color: var(--link-color);
 }
 
+/* Extra accents */
+:root {
+	--accent-1: #34d399; /* teal */
+	--accent-2: #ff6bcb; /* pink */
+	--accent-3: #f59e0b; /* amber/gold */
+	--gradient-accent: linear-gradient(90deg, var(--link-accent), var(--accent-2));
+}
+
 /* Page base */
 body {
 	margin: 0;
@@ -249,3 +257,137 @@ div[id$="Section"] {
 	}
 	html { scroll-behavior: auto; }
 }
+
+	/* Section treatments to make content 'pop' */
+	.section-card {
+		background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+		border: 1px solid rgba(255,255,255,0.03);
+		border-radius: 12px;
+		padding: 24px;
+		box-shadow: 0 10px 30px rgba(2,6,12,0.45);
+	}
+
+	.section--alt { background: linear-gradient(180deg, rgba(255,255,255,0.01), rgba(13,13,15,0.03)); }
+
+	.section-heading {
+		display: flex;
+		align-items: center;
+		gap: 14px;
+		margin-bottom: 18px;
+	}
+
+	.section-heading h2 {
+		margin: 0;
+		font-size: 20px;
+		letter-spacing: -0.2px;
+	}
+
+	.section-sub { color: rgba(230,238,248,0.72); font-size: 13px; }
+
+	.decor-line {
+		height: 4px;
+		width: 56px;
+		border-radius: 6px;
+		background: var(--gradient-accent);
+	}
+
+	/* Card grid visuals */
+	.card {
+		background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+		border-radius: 12px;
+		padding: 16px;
+		transition: transform 220ms cubic-bezier(.2,.9,.3,1), box-shadow 220ms;
+		border: 1px solid rgba(255,255,255,0.03);
+	}
+
+	.card:hover { transform: translateY(-6px); box-shadow: 0 18px 40px rgba(2,6,12,0.55); }
+
+	.muted-lead { color: rgba(230,238,248,0.72); font-size: 15px; }
+
+	/* Stagger container helper: children with [data-reveal] will stagger */
+	.stagger { --stagger-base: 80ms; }
+	.stagger [data-reveal] { opacity: 0; transform: translateY(8px); transition: opacity 420ms ease, transform 420ms ease; }
+	.stagger.visible [data-reveal] { opacity: 1; transform: translateY(0); }
+
+	/* Larger visual tweaks for hero */
+	.hero { padding: 110px 20px; }
+	.hero h1 { font-size: 48px; letter-spacing: -1px; }
+	.hero-lead { font-size: 20px; }
+
+	.hero-top { display: flex; align-items: center; gap: 18px; justify-content: center; }
+	.profile-img {
+		width: 110px;
+		height: 110px;
+		object-fit: cover;
+		border-radius: 999px;
+		border: 2px solid rgba(255,255,255,0.06);
+		box-shadow: 0 10px 30px rgba(2,6,12,0.5);
+	}
+	.hero-copy { text-align: left; }
+
+	@media (max-width: 740px) {
+		.hero-top { flex-direction: column; gap: 12px; }
+		.hero-copy { text-align: center; }
+		.profile-img { width: 88px; height: 88px; }
+	}
+
+	/* small-screen tweaks to maintain spacing */
+	@media (max-width: 740px) {
+		.section-card { padding: 16px; }
+		.hero { padding: 60px 14px; }
+		.hero h1 { font-size: 28px; }
+	}
+
+	/* Color utilities and components */
+	.tag {
+		display: inline-block;
+		padding: 6px 10px;
+		border-radius: 999px;
+		font-size: 12px;
+		font-weight: 700;
+		color: #07121a;
+		background: var(--accent-1);
+	}
+
+	.badge {
+		display: inline-flex;
+		align-items: center;
+		gap: 8px;
+		padding: 6px 8px;
+		border-radius: 8px;
+		background: linear-gradient(90deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
+		color: var(--link-color);
+		border: 1px solid rgba(255,255,255,0.04);
+	}
+
+	.btn-primary {
+		background: var(--link-accent);
+		color: white;
+		padding: 10px 14px;
+		border-radius: 10px;
+		border: none;
+		box-shadow: 0 8px 22px rgba(139,92,246,0.12);
+	}
+
+	.btn-ghost {
+		background: transparent;
+		color: var(--link-accent);
+		border: 1px solid rgba(139,92,246,0.12);
+	}
+
+	.btn-outline {
+		background: transparent;
+		color: var(--link-color);
+		border: 1px solid rgba(255,255,255,0.06);
+	}
+
+	/* accent border on card hover */
+	.card:hover { border-color: rgba(139,92,246,0.12); }
+
+	/* accent shadows for alternate sections */
+	.section--alt .section-card { box-shadow: 0 14px 40px rgba(139,92,246,0.06); }
+
+	/* small color helpers */
+	.accent-teal { color: var(--accent-1); }
+	.accent-pink { color: var(--accent-2); }
+	.accent-gold { color: var(--accent-3); }
