@@ -226,3 +226,26 @@ div[id$="Section"] {
 	.primary-nav a { display: block; padding: 8px 4px; color: var(--nav-link-color); }
 	.primary-nav a:focus { outline: none; }
 }
+
+/* Section reveal animations */
+.reveal {
+	opacity: 0;
+	transform: translateY(10px);
+	transition: opacity 520ms cubic-bezier(.2,.9,.3,1), transform 520ms cubic-bezier(.2,.9,.3,1);
+	will-change: opacity, transform;
+}
+
+.reveal.visible {
+	opacity: 1;
+	transform: translateY(0);
+}
+
+/* Respect user preference for reduced motion */
+@media (prefers-reduced-motion: reduce) {
+	.reveal,
+	.reveal.visible {
+		transition: none;
+		transform: none;
+	}
+	html { scroll-behavior: auto; }
+}
