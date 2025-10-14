@@ -46,8 +46,9 @@
                 <div class="decor-line"></div>
                 <h2>About Me</h2>
             </div>
-            <p class="muted-lead">I graduated from the University of California, Davis with a B.Eng. in Computer Science. I enjoy building web applications and 3D-printed projects. I have experience designing responsive UI/UX, performing SEO optimizations, and mentoring students in web development.</p>
-            <p>Currently based in Redmond, WA. Open to Frontend and Full Stack roles.</p>
+            <p class="muted-lead">I'm a Computer Science graduate from the University of California, Davis, holding a Bachelor of Engineering degree. 
+                I’m passionate about creating dynamic web applications and exploring hands-on innovation through 3D printing. 
+                My experience spans responsive UI/UX design, SEO optimization, and guiding students in web development through mentorship and instruction.</p>
         </section>
 
         <!-- SKILLS -->
@@ -109,17 +110,41 @@
                 <h2>Selected Projects</h2>
             </div>
             <div class="projects-grid">
-                <article class="project card" data-reveal>
-                    <h3>Audyssey</h3>
-                    <p>Project Manager & Front-end Developer. Built UI integrations and QA for a Python + JS stack. Tools: Docker, MongoDB.</p>
+                <article class="project card project-flip" data-reveal tabindex="0">
+                    <div class="flip-inner">
+                        <div class="flip-front">
+                            <h3>Audyssey</h3>
+                            <p class="project-meta">Project Manager • React, Spotify API • Docker, MongoDB</p>
+                            <p class="project-short">Personalized playlist discovery and audio-feature visualizations.</p>
+                        </div>
+                        <div class="flip-back">
+                            <p>Audyssey integrates the Spotify Web API to analyze listening habits and surface personalized playlist recommendations and audio-feature visualizations. I implemented OAuth flows, interactive UI components that fetch and display audio features, and end-to-end QA. Tech: Spotify Web API, JavaScript/React, Python backend, Docker, MongoDB — outcome: streamlined playlist discovery and improved user engagement.</p>
+                        </div>
+                    </div>
                 </article>
-                <article class="project card" data-reveal>
-                    <h3>Palmer's Penguins Visualization</h3>
-                    <p>Front-end dev using D3.js to generate interactive visualizations. Leveraged AI-assisted graph generation.</p>
+                <article class="project card project-flip" data-reveal tabindex="0">
+                    <div class="flip-inner">
+                        <div class="flip-front">
+                            <h3>Palmer's Penguins Visualization</h3>
+                            <p class="project-meta">Front-end • D3.js • Research visualization</p>
+                            <p class="project-short">Interactive clustering to explore evolutionary relationships.</p>
+                        </div>
+                        <div class="flip-back">
+                            <p>A D3.js research visualization exploring the Palmer's Penguins dataset to surface morphological clusters and infer likely evolutionary relationships (the "evolutionary grandparent"). Implemented hierarchical clustering visuals, interactive filters, and animated transitions to help explore species-level patterns. Tech: D3.js, CSV processing, JavaScript — outcome: an exploratory dashboard used in research presentations.</p>
+                        </div>
+                    </div>
                 </article>
-                <article class="project card" data-reveal>
-                    <h3>HackDavis — Facial Recognition</h3>
-                    <p>Implemented a facial recognition pipeline with Flutter and improved accuracy by 20% through dataset engineering.</p>
+                <article class="project card project-flip" data-reveal tabindex="0">
+                    <div class="flip-inner">
+                        <div class="flip-front">
+                            <h3>HealthScan (HackDavis)</h3>
+                            <p class="project-meta">Hackathon • Flutter, TensorFlow • Prototype</p>
+                            <p class="project-short">Facial-expression mood detection with resource recommendations.</p>
+                        </div>
+                        <div class="flip-back">
+                            <p>HealthScan is a prototype that analyzes facial expressions to estimate a user's mood and surface curated resources and links accordingly. I built the facial-analysis pipeline, improved model inputs via dataset engineering (≈20% accuracy gain), and integrated results into a responsive Flutter UI. Tech: Flutter, TensorFlow/MediaPipe, Python preprocessing — outcome: a working prototype showcased at HackDavis.</p>
+                        </div>
+                    </div>
                 </article>
             </div>
         </section>

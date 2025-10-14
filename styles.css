@@ -183,6 +183,76 @@ div[id$="Section"] {
 .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 14px; margin-top: 12px; }
 .project h2 { margin: 0 0 8px 0; }
 
+/* Keep a consistent three-column layout on wide screens */
+@media (min-width: 1100px) {
+	.projects-grid { grid-template-columns: repeat(3, 1fr); gap: 18px; }
+}
+
+/* Flip card styles for project cards */
+.project-flip {
+	perspective: 1200px; /* provides depth */
+	-webkit-perspective: 1200px;
+	padding: 0; /* inner card handles padding */
+}
+
+.project-flip .flip-inner {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	/* larger min-height so back face has enough room for text */
+	min-height: 320px;
+	transition: transform 520ms cubic-bezier(.2,.9,.3,1);
+	transform-style: preserve-3d;
+}
+
+.project-flip .flip-front,
+.project-flip .flip-back {
+	position: absolute;
+	inset: 0;
+	backface-visibility: hidden;
+	-webkit-backface-visibility: hidden;
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	padding: 20px;
+	border-radius: 12px;
+}
+
+.project-flip .flip-front {
+	/* front face design: keep existing card visuals */
+	background: linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.005));
+}
+
+.project-flip .flip-back {
+	transform: rotateY(180deg);
+	background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+	border: 1px solid rgba(255,255,255,0.03);
+	/* allow scrolling if content is long (keeps card height fixed) */
+	overflow-y: auto;
+	-webkit-overflow-scrolling: touch;
+	padding-right: 8px; /* space for scrollbar */
+}
+
+/* On hover or keyboard focus, flip the inner container */
+.project-flip:hover .flip-inner,
+.project-flip:focus-within .flip-inner,
+.project-flip:focus {
+	transform: rotateY(180deg);
+}
+
+.project-meta { font-size: 13px; color: var(--muted); margin: 4px 0 0 0; }
+.project-short { font-size: 14px; color: rgba(230,238,248,0.9); margin: 6px 0 0 0; }
+
+/* ensure flip animation respects reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+	.project-flip .flip-inner { transition: none; }
+}
+
+/* even taller cards on very wide screens */
+@media (min-width: 1400px) {
+	.project-flip .flip-inner { min-height: 380px; }
+}
+
 .experience-timeline { display: grid; gap: 12px; margin-top: 12px; }
 .timeline-item { padding: 12px; }
 
